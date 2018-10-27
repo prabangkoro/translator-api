@@ -1,0 +1,6 @@
+// set your PROJECT_ID
+// rename this file into: config.js
+module.exports = {
+  projectId: 'PROJECT_ID',
+  port: 3000
+}

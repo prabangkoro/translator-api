@@ -1,0 +1,26 @@
+{
+  "name": "translatorapi",
+  "version": "1.0.0",
+  "description": "a simple Node.JS API translator using Google Translate API",
+  "main": "index.js",
+  "scripts": {
+    "server": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/prabangkoro/translator-api.git"
+  },
+  "keywords": [
+    "translate"
+  ],
+  "author": "babang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prabangkoro/translator-api/issues"
+  },
+  "homepage": "https://github.com/prabangkoro/translator-api#readme",
+  "dependencies": {
+    "@google-cloud/translate": "^2.1.2",
+    "express": "^4.16.4"
+  }
+}
