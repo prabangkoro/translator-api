@@ -4,8 +4,7 @@ const translator = require('./translator')
 const endpoints = {
   translate: '/translate',
   autoTranslate: '/auto-translate',
-  detectLanguage: '/detect-language',
-  about: '/about'
+  detectLanguage: '/detect-language'
 }
 const responseStatus = {
   success: 'OK',
