@@ -88,7 +88,7 @@ Run in postman:
 * Access Token: get from gcloud SDK cli
 
 ```
-https://translation.googleapis.com/language/translate/v2?q=dasar kau jalang&target=en&source=id
+https://translation.googleapis.com/language/translate/v2?q=halo dunia&target=en&source=id
 ```
 
 And you'll get this response:
@@ -98,7 +98,7 @@ And you'll get this response:
     "data": {
         "translations": [
             {
-                "translatedText": "Translated Text"
+                "translatedText": "hello world"
             }
         ]
     }
