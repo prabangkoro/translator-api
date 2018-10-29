@@ -23,6 +23,12 @@ function setRule() {
   // middleware
   app.use(function (req, res, next) {
     res.type('application/json')
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080')
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST')
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
     next()
   })
   // disable
