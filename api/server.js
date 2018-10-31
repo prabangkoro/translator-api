@@ -39,6 +39,7 @@ function activateAPI() {
   api.startTranslator()
   api.startAutoTranslator()
   api.startLanguageDetector()
+  api.startLanguageSupportGetter()
 }
 
 module.exports = {

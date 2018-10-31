@@ -11,6 +11,20 @@ const responseStatus = {
   fail: 'FAILED'
 }
 
+function startLanguageSupportGetter () {
+  app.get('/support-language', (req, res) => {
+    translator.getLanguages(req.query.q, (results) => {
+      let response = {
+        status: responseStatus.success,
+        data: {
+          supportLang: results
+        }
+      }
+      res.json(response)
+    })
+  })
+}
+
 // translator API Gateway
 function startTranslator() {
   // API DOC
@@ -117,5 +131,6 @@ function startLanguageDetector() {
 module.exports = {
   startTranslator,
   startAutoTranslator,
-  startLanguageDetector
+  startLanguageDetector,
+  startLanguageSupportGetter
 }

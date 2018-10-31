@@ -43,8 +43,27 @@ var autoTranslateText = ({inputText, targetLanguage}, callback) => {
   })
 }
 
+// get languages support
+var getLanguages = (target, callback) => {
+  // translate.getLanguages(target)
+  //   .then((results) => {
+  //     callback(results)
+  //     for (const result of results) {
+  //       console.log(`result: ${JSON.stringify(result)}`)
+  //     }
+  //   })
+  translate.getLanguages(target, (err, results, resp) => {
+    if (err) {
+      console.log(`error get languages: ${err}`)
+      return
+    }
+    callback(results)
+  })
+}
+
 module.exports = {
   translateText,
   detectLanguage,
-  autoTranslateText
+  autoTranslateText,
+  getLanguages
 }
