@@ -4,20 +4,37 @@ const translator = require('./translator')
 const endpoints = {
   translate: '/translate',
   autoTranslate: '/auto-translate',
-  detectLanguage: '/detect-language'
+  detectLanguage: '/detect-language',
+  languageSupport: '/language-support'
 }
 const responseStatus = {
   success: 'OK',
   fail: 'FAILED'
 }
 
+// language support API Gateway
 function startLanguageSupportGetter () {
-  app.get('/support-language', (req, res) => {
+   // API DOC
+   app.get(endpoints.languageSupport, (req, res) => {
+    let response = {
+      status: responseStatus.success,
+      data: {
+        method: "POST",
+        endpoint: " /language-support",
+        queries: [
+          { q: "language code" }
+        ]
+      }
+    }
+    res.json(response)
+  })
+  // Get Language support
+  app.post(endpoints.languageSupport, (req, res) => {
     translator.getLanguages(req.query.q, (results) => {
       let response = {
         status: responseStatus.success,
         data: {
-          supportLang: results
+          supportedLanguage: results
         }
       }
       res.json(response)

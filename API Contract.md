@@ -62,3 +62,27 @@
   }
 }
 ```
+
+## Language Support
+
+### Request
+* method: POST
+* endpoint: ```/language-support```
+* parameters (query string):
+  * q : source language code, reference: [link](https://ctrlq.org/code/19899-google-translate-languages)
+
+### Response
+```json
+{
+  "status": "OK/FAILED",
+  "data": {
+    "supportedLanguage": [
+      {
+        "code": "id",
+        "name": "Indonesia"
+      },
+      ....
+    ]
+  }
+}
+```
